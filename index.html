@@ -1,99 +1,1272 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Bestlady -Comradee Store FROM KSH 200</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fdf2f8;color:#111827}
-.header{position:sticky;top:0;z-index:50;background:rgba(124,58,237,0.96);backdrop-filter:blur(12px);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;color:white}
-.logo{font-weight:700;font-size:20px}
-.badge{background:#facc15;color:#000;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:800;margin-left:6px}
-.hero{background:linear-gradient(135deg,#7c3aed,#ec4899);color:white;padding:36px 16px;text-align:center}
-.hero h1{font-size:26px;line-height:1.2}
-.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:6px;font-size:14px}
-.btn-y{background:#facc15;color:#000}.btn-g{background:#22c55e;color:white}
-.filters{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;position:sticky;top:56px;background:#fdf2f8;z-index:40;scrollbar-width:none}
-.filter{white-space:nowrap;padding:7px 14px;border-radius:999px;border:1px solid #e5e7eb;background:white;cursor:pointer;font-size:13px;font-weight:600}
-.filter.active{background:#7c3aed;color:white;border-color:#7c3aed}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:16px}
-@media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr)}}
-.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);position:relative}
-.card img{width:100%;height:260px;object-fit:cover;background:#f3f4f6;display:block}
-.card-body{padding:10px 10px 12px}
-.off{position:absolute;top:8px;left:8px;background:#ef4444;color:white;font-size:11px;padding:3px 8px;border-radius:999px;font-weight:700;z-index:2}
-.price-old{text-decoration:line-through;color:#9ca3af;font-size:12px}
-.price-new{color:#7c3aed;font-weight:800;font-size:16px}
-.btns{display:flex;gap:6px;margin-top:8px}
-.bs{flex:1;padding:9px;border-radius:10px;border:none;font-size:12px;font-weight:700;cursor:pointer}
-.bb{background:#111827;color:white}.bg{background:#22c55e;color:white}
-.cart{position:fixed;top:0;right:-100%;width:88%;max-width:380px;height:100%;background:white;z-index:100;transition:0.35s;box-shadow:-6px 0 24px rgba(0,0,0,0.2);padding:18px;overflow-y:auto}
-.cart.open{right:0}
-.wa{position:fixed;bottom:20px;right:20px;background:#22c55e;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:30px;z-index:90;text-decoration:none}
-.footer{background:#111827;color:#d1d5db;padding:26px 16px;margin-top:18px;font-size:13px;line-height:1.7}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestlady — Chic Fashion & Lifestyle Boutique</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF8F5',
+            sand: '#F2EDE6',
+            charcoal: '#1A1A1A',
+            terracotta: '#C86D51',
+            terracottaDark: '#A8553B',
+            muted: '#6E6862',
+            borderWarm: '#E6DFD5'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #1A1A1A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Custom scrollbar for sleek editorial feel */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D6CEC3;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C86D51;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .card-hover {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -12px rgba(26, 26, 26, 0.09);
+    }
+  </style>
 </head>
-<body>
-<header class="header"><div class="logo">👑 BestLady <span class="badge">COMRADE PRICES</span></div><div style="font-weight:700">🛒 <span id="c1">0</span></div></header>
-<section class="hero"><h1>BestLady MEGA<br>FROM KSH 699<br>Real Photos</h1><p style="margin:12px 0;">Kisii Campus Junction • 0116162159 • Free Delivery Kisii • Pay on Delivery</p><a class="btn btn-y" href="#products">Shop Now</a><a class="btn btn-g" href="https://wa.me/254116162159">WhatsApp Order</a></section>
-<div class="filters">
-<button class="filter active" onclick="filterBy('all',this)">All (14)</button>
-<button class="filter" onclick="filterBy('cargo',this)">Cargo</button>
-<button class="filter" onclick="filterBy('shorts',this)">Shorts</button>
-<button class="filter" onclick="filterBy('crocs',this)">Crocs</button>
-<button class="filter" onclick="filterBy('flats',this)">Flats</button>
-<button class="filter" onclick="filterBy('slides',this)">Slides</button>
-<button class="filter" onclick="filterBy('under1000',this)">Under 1000</button>
-</div>
-<div class="grid" id="grid"></div>
-<div class="cart" id="cartD"><h3>Your Bag (<span id="c2">0</span>)</h3><div id="cartItems" style="margin-top:12px"></div><p style="margin-top:12px"><b>Delivery:</b> FREE in Kisii</p><p style="font-size:18px;margin-top:6px"><b>Total: Ksh <span id="ct">0</span></b></p><button class="btn btn-g" style="width:100%;margin-top:14px" onclick="checkout()">Checkout via WhatsApp</button><button class="btn bb" style="width:100%;margin-top:8px;background:#e5e7eb;color:#111" onclick="closeCart()">Continue Shopping</button></div>
-<a class="wa" href="https://wa.me/254116162159">💬</a>
-<footer class="footer"><b style="color:white;font-size:16px">BestLady — Everything A Girl Needs</b><br>📍 Kisii Campus Junction<br>📞 0116162159 | WhatsApp 0116162159<br>💈 Ajlovie Kinyonzi: Shaving Ksh50, Blow-Dry Ksh70<br>💳 M-Pesa Till • Pay on Delivery • Same Day Delivery in Kisii</footer>
-<script>
- 
-let cart=[];
-function render(list){
-document.getElementById('grid').innerHTML=list.map(p=>`
-<div class="card">
-<span class="off">-40%</span>
-<img src="${p.img}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/350x350?text=BestLady'">
-<div class="card-body">
-<div style="font-size:12px;font-weight:700;line-height:1.3;min-height:34px">${p.name}</div>
-<div style="margin-top:4px"><span class="price-old">Ksh ${p.old}</span> <span class="price-new">Ksh ${p.price}</span></div>
-<div style="font-size:11px;color:#6b7280;margin-top:2px">${p.size} • FREE Delivery</div>
-<div class="btns">
-<button class="bs bb" onclick="addCart(${p.id})">Add to Bag</button>
-<button class="bs bg" onclick="buyWA('${p.name}',${p.price})">WhatsApp</button>
-</div>
-</div>
-</div>`).join('');
-}
-render(products);
-function filterBy(cat,el){
-document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active')); el.classList.add('active');
-if(cat==='all') render(products);
-else if(cat==='under1000') render(products.filter(p=>p.price<=1000));
-else render(products.filter(p=>p.cat===cat));
-}
-function addCart(id){const p=products.find(x=>x.id===id);cart.push(p);update();document.getElementById('cartD').classList.add('open');}
-function update(){
-document.getElementById('c1').innerText=cart.length;
-document.getElementById('c2').innerText=cart.length;
-let total=0,html='';
-cart.forEach(c=>{total+=c.price; html+=`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee;font-size:13px"><span>${c.name.substring(0,26)}</span><b>Ksh ${c.price}</b></div>`});
-document.getElementById('cartItems').innerHTML=html||'Bag empty - add comrade deals!';
-document.getElementById('ct').innerText=total;
-}
-function closeCart(){document.getElementById('cartD').classList.remove('open');}
-function buyWA(name,price){window.open(`https://wa.me/254116162159?text=Hi%20BestLady,%20I%20want%20${encodeURIComponent(name)}%20Ksh%20${price}`,'_blank');}
-function checkout(){
-if(cart.length===0){alert('Bag empty!');return;}
-let msg='Hi BestLady%2C I want:%0A';let total=0;
-cart.forEach(c=>{msg+=`- ${encodeURIComponent(c.name)} Ksh ${c.price}%0A`;total+=c.price;});
-msg+=`%0ATotal: Ksh ${total}%0ADelivery: Kisii Campus Junction%0APay on Delivery`;
-window.open(`https://wa.me/254116162159?text=${msg}`,'_blank');
-}
-</script>
+<body class="bg-cream text-charcoal selection:bg-terracotta selection:text-white overflow-x-hidden">
+
+  <!-- Announcement Bar -->
+  <div class="bg-charcoal text-cream text-xs sm:text-sm py-2.5 px-4 text-center tracking-wide font-medium">
+    <span>NEW SEASON DROP • Curated Streetwear, Resort Dresses & Luxe Slides • Instant Order via WhatsApp</span>
+  </div>
+
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-borderWarm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
+        
+        <!-- Brand Logo -->
+        <a href="#" onclick="resetFilters(); return false;" class="flex items-center gap-2.5 shrink-0 group">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracotta text-white flex items-center justify-center font-serif italic font-bold text-xl shadow-sm group-hover:bg-terracottaDark transition-colors">
+            B
+          </div>
+          <div>
+            <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-charcoal block leading-none">Bestlady</span>
+            <span class="text-[10px] uppercase tracking-[0.22em] text-muted font-semibold block mt-0.5">Boutique & Lifestyle</span>
+          </div>
+        </a>
+
+        <!-- Desktop Search Bar -->
+        <div class="hidden md:flex flex-1 max-w-md mx-6">
+          <div class="relative w-full">
+            <input 
+              type="text" 
+              id="desktopSearchInput"
+              oninput="handleSearch(this.value)"
+              placeholder="Search sets, slides, cargo jeans, tumblers..." 
+              class="w-full bg-sand/80 border border-borderWarm rounded-full py-2.5 pl-11 pr-4 text-sm text-charcoal placeholder:text-muted focus:outline-none focus:border-terracotta focus:bg-white transition-all"
+            >
+            <svg class="w-4 h-4 text-muted absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-2 sm:gap-4">
+          <button 
+            onclick="toggleMobileSearch()" 
+            class="md:hidden p-2.5 rounded-full text-charcoal hover:bg-sand transition-colors"
+            aria-label="Toggle Search"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </button>
+
+          <button 
+            onclick="openCart()" 
+            class="relative flex items-center gap-2.5 bg-charcoal hover:bg-terracotta text-cream px-4 sm:px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-sm"
+          >
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span class="hidden sm:inline">Bag</span>
+            <span id="cartBadge" class="bg-terracotta text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center transition-transform">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Search Bar (Collapsible) -->
+      <div id="mobileSearchContainer" class="hidden md:hidden pb-3">
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            id="mobileSearchInput"
+            oninput="handleSearch(this.value)"
+            placeholder="Search Bestlady collection..." 
+            class="w-full bg-sand border border-borderWarm rounded-full py-2.5 pl-10 pr-4 text-sm text-charcoal placeholder:text-muted focus:outline-none focus:border-terracotta focus:bg-white"
+          >
+          <svg class="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="relative overflow-hidden border-b border-borderWarm bg-gradient-to-br from-sand via-cream to-[#EFE7DC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-borderWarm text-xs font-semibold uppercase tracking-widest text-terracotta">
+            <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+            Complete Boutique Catalog • 21 Curated Styles
+          </div>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal leading-[1.1] tracking-tight">
+            Effortless Glamour for Every <span class="italic font-normal text-terracotta">Mood & Moment.</span>
+          </h1>
+          <p class="text-muted text-base sm:text-lg max-w-xl leading-relaxed">
+            Discover our complete collection—from signature two-piece loungewear, acid-wash cargos, and embellished evening dresses to designer-inspired slides and insulated tumblers.
+          </p>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#catalog" class="px-7 py-3.5 rounded-full bg-terracotta hover:bg-terracottaDark text-white font-semibold text-sm tracking-wide transition-all shadow-sm">
+              Shop Full Collection
+            </a>
+            <button onclick="filterCategory('Two-Piece Sets'); document.getElementById('catalog').scrollIntoView({behavior:'smooth'});" class="px-6 py-3.5 rounded-full bg-white hover:bg-sand text-charcoal border border-borderWarm font-semibold text-sm tracking-wide transition-all">
+              Explore 2-Piece Sets
+            </button>
+          </div>
+        </div>
+
+        <!-- Editorial Showcase Cards -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
+          <div class="bg-white p-4 sm:p-5 rounded-3xl border border-borderWarm shadow-sm space-y-3">
+            <div class="w-full h-28 sm:h-32 rounded-2xl bg-sand flex items-center justify-center">
+              <svg class="w-16 h-16 text-terracotta" viewBox="0 0 80 80" fill="none">
+                <rect x="24" y="14" width="32" height="52" rx="10" fill="#C86D51" fill-opacity="0.15" stroke="#C86D51" stroke-width="2.5"/>
+                <path d="M22 22H58" stroke="#C86D51" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="40" cy="42" r="7" fill="#C86D51"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-terracotta">Trending Sets</span>
+              <h3 class="font-serif font-semibold text-base sm:text-lg text-charcoal">Signature Co-ords</h3>
+              <p class="text-xs text-muted mt-0.5">Dior, Irish Boys, Class of 2026 & Star Ombré</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 sm:p-5 rounded-3xl border border-borderWarm shadow-sm space-y-3 translate-y-3 sm:translate-y-5">
+            <div class="w-full h-28 sm:h-32 rounded-2xl bg-[#F5EFEA] flex items-center justify-center">
+              <svg class="w-16 h-16 text-charcoal" viewBox="0 0 80 80" fill="none">
+                <ellipse cx="40" cy="44" rx="22" ry="12" fill="#1A1A1A" fill-opacity="0.1" stroke="#1A1A1A" stroke-width="2.5"/>
+                <path d="M24 38C30 30 50 30 56 38" stroke="#C86D51" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="40" cy="33" r="3" fill="#D4AF37"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-terracotta">Footwear Edit</span>
+              <h3 class="font-serif font-semibold text-base sm:text-lg text-charcoal">Luxe Slides & Flats</h3>
+              <p class="text-xs text-muted mt-0.5">Platform monograms & gold-accented sandals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="border-b border-borderWarm bg-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs sm:text-sm text-charcoal font-medium">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-full bg-sand flex items-center justify-center text-terracotta shrink-0">✓</span>
+          <span>100% Curated Boutique Pieces</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-full bg-sand flex items-center justify-center text-terracotta shrink-0">⚡</span>
+          <span>Fast Dispatch & Delivery</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-full bg-sand flex items-center justify-center text-terracotta shrink-0">💬</span>
+          <span>Direct WhatsApp Ordering</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-full bg-sand flex items-center justify-center text-terracotta shrink-0">✨</span>
+          <span>Multiple Sizes & Colorways</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog Section -->
+  <main id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    
+    <!-- Section Header & Controls -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs uppercase tracking-[0.2em] text-terracotta font-bold">The Bestlady Edit</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal mt-1">Shop All Products</h2>
+      </div>
+      <p id="productCountText" class="text-sm text-muted font-medium">Showing all 21 collections</p>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-4 mb-6" id="categoryTabs">
+      <button onclick="filterCategory('All')" data-category="All" class="category-btn active shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-charcoal text-cream shadow-sm">
+        All Items (21)
+      </button>
+      <button onclick="filterCategory('Two-Piece Sets')" data-category="Two-Piece Sets" class="category-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-charcoal border border-borderWarm hover:border-terracotta">
+        Two-Piece Sets (7)
+      </button>
+      <button onclick="filterCategory('Dresses')" data-category="Dresses" class="category-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-charcoal border border-borderWarm hover:border-terracotta">
+        Dresses & Resort (3)
+      </button>
+      <button onclick="filterCategory('Denim & Bottoms')" data-category="Denim & Bottoms" class="category-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-charcoal border border-borderWarm hover:border-terracotta">
+        Denim & Bottoms (3)
+      </button>
+      <button onclick="filterCategory('Footwear')" data-category="Footwear" class="category-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-charcoal border border-borderWarm hover:border-terracotta">
+        Footwear (7)
+      </button>
+      <button onclick="filterCategory('Accessories & Tumblers')" data-category="Accessories & Tumblers" class="category-btn shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-charcoal border border-borderWarm hover:border-terracotta">
+        Accessories & Tumblers (1)
+      </button>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Cards injected dynamically by JS -->
+    </div>
+
+    <!-- Empty Search State -->
+    <div id="emptyState" class="hidden text-center py-16 px-4 bg-white rounded-3xl border border-borderWarm">
+      <div class="w-14 h-14 rounded-full bg-sand text-terracotta flex items-center justify-center mx-auto mb-4 text-2xl">🔍</div>
+      <h3 class="font-serif text-2xl font-bold text-charcoal">No matching items found</h3>
+      <p class="text-muted text-sm max-w-md mx-auto mt-2">Try adjusting your search keywords or switching back to all categories to explore the full Bestlady catalog.</p>
+      <button onclick="resetFilters()" class="mt-5 px-6 py-2.5 rounded-full bg-charcoal text-cream text-sm font-semibold hover:bg-terracotta transition-colors">
+        View All 21 Items
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-cream border-t border-white/10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center font-serif italic font-bold text-xl">B</div>
+            <span class="font-serif text-2xl font-bold tracking-tight">Bestlady</span>
+          </div>
+          <p class="text-sm text-cream/70 leading-relaxed max-w-sm">
+            Your destination for statement two-piece sets, chic streetwear, glamorous evening dresses, designer-inspired slides, and everyday lifestyle essentials.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-lg font-semibold mb-4 text-white">Collections</h4>
+          <ul class="space-y-2.5 text-sm text-cream/70">
+            <li><button onclick="filterCategory('Two-Piece Sets'); window.scrollTo({top: 400, behavior:'smooth'});" class="hover:text-terracotta transition-colors">Two-Piece Lounge & Graphic Sets</button></li>
+            <li><button onclick="filterCategory('Dresses'); window.scrollTo({top: 400, behavior:'smooth'});" class="hover:text-terracotta transition-colors">Resort, Party & Glam Dresses</button></li>
+            <li><button onclick="filterCategory('Denim & Bottoms'); window.scrollTo({top: 400, behavior:'smooth'});" class="hover:text-terracotta transition-colors">Acid-Wash Cargos & Designer Denim</button></li>
+            <li><button onclick="filterCategory('Footwear'); window.scrollTo({top: 400, behavior:'smooth'});" class="hover:text-terracotta transition-colors">Platform Slides & Gold-Accent Sandals</button></li>
+            <li><button onclick="filterCategory('Accessories & Tumblers'); window.scrollTo({top: 400, behavior:'smooth'});" class="hover:text-terracotta transition-colors">"Mood The Cup" Insulated Tumblers</button></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h4 class="font-serif text-lg font-semibold text-white">Easy Boutique Ordering</h4>
+          <p class="text-sm text-cream/70 leading-relaxed">
+            Select your favorite colors, sizes, or style variations, add them to your Bestlady Bag, and send your itemized order directly via WhatsApp or instant checkout.
+          </p>
+          <button onclick="openCart()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-terracotta hover:bg-terracottaDark text-white text-sm font-semibold transition-colors">
+            Open Shopping Bag
+          </button>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/50">
+        <p>© 2026 Bestlady Boutique & Lifestyle. All rights reserved.</p>
+        <p>Crafted with care for effortless style.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Shopping Cart Drawer -->
+  <div id="cartOverlay" onclick="closeCart()" class="fixed inset-0 bg-charcoal/50 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-cream z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-borderWarm">
+    
+    <!-- Drawer Header -->
+    <div class="px-6 py-5 border-b border-borderWarm flex items-center justify-between bg-white">
+      <div>
+        <h3 class="font-serif text-2xl font-bold text-charcoal">Your Bestlady Bag</h3>
+        <p id="cartItemCountLabel" class="text-xs text-muted mt-0.5">0 items selected</p>
+      </div>
+      <button onclick="closeCart()" class="p-2 rounded-full hover:bg-sand text-charcoal transition-colors" aria-label="Close Cart">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <!-- Cart items injected by JS -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div id="cartFooter" class="p-6 border-t border-borderWarm bg-white space-y-4">
+      <div class="space-y-1.5">
+        <div class="flex items-center justify-between text-sm text-muted">
+          <span>Subtotal</span>
+          <span id="cartSubtotal" class="font-semibold text-charcoal">0.00</span>
+        </div>
+        <div class="flex items-center justify-between text-xs text-muted">
+          <span>Delivery</span>
+          <span>Calculated at confirmation</span>
+        </div>
+      </div>
+
+      <button onclick="openCheckoutModal()" class="w-full py-3.5 px-6 rounded-full bg-terracotta hover:bg-terracottaDark text-white font-semibold text-sm tracking-wide transition-all shadow-md flex items-center justify-center gap-2">
+        <span>Proceed to Order / WhatsApp</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout / WhatsApp Order Modal -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-charcoal/60 backdrop-blur-xs">
+    <div class="bg-cream border border-borderWarm rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative">
+      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 p-2 rounded-full bg-sand hover:bg-borderWarm text-charcoal transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="mb-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta">Bestlady Boutique</span>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-charcoal mt-1">Complete Your Order</h3>
+        <p class="text-sm text-muted mt-1">Review your selected items and send your order directly via WhatsApp or copy the order summary.</p>
+      </div>
+
+      <!-- Customer Details -->
+      <div class="space-y-3 mb-5">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1">Your Name</label>
+          <input type="text" id="customerName" placeholder="e.g., Sarah" class="w-full px-4 py-2.5 rounded-xl bg-white border border-borderWarm text-sm focus:outline-none focus:border-terracotta">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1">Delivery Location / Notes</label>
+          <input type="text" id="customerLocation" placeholder="e.g., Westlands / Same-day delivery" class="w-full px-4 py-2.5 rounded-xl bg-white border border-borderWarm text-sm focus:outline-none focus:border-terracotta">
+        </div>
+      </div>
+
+      <!-- Live Order Summary Box -->
+      <div class="bg-white rounded-2xl border border-borderWarm p-4 mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-muted">Itemized Order Summary</span>
+          <span id="modalTotalBadge" class="text-sm font-bold text-terracotta">Total: 0.00</span>
+        </div>
+        <pre id="orderSummaryText" class="text-xs text-charcoal whitespace-pre-wrap font-sans bg-sand/60 p-3 rounded-xl border border-borderWarm/60 max-h-44 overflow-y-auto leading-relaxed"></pre>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <button onclick="sendWhatsAppOrder()" class="py-3.5 px-5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-sm shadow-sm flex items-center justify-center gap-2 transition-colors">
+          <span>Order via WhatsApp</span>
+        </button>
+        <button onclick="copyOrderSummary()" class="py-3.5 px-5 rounded-full bg-charcoal hover:bg-terracotta text-white font-semibold text-sm shadow-sm flex items-center justify-center gap-2 transition-colors">
+          <span>Copy Order Details</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-charcoal text-cream px-5 py-3 rounded-full shadow-xl text-sm font-medium flex items-center gap-2.5 opacity-0 pointer-events-none transition-all duration-300 translate-y-3">
+    <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+    <span id="toastMessage">Added to your Bestlady Bag</span>
+  </div>
+
+  <script>
+    // Complete 21-item Bestlady Catalog
+    const products = [
+      {
+        id: 1,
+        name: '"Mood The Cup" Insulated Tumblers',
+        category: 'Accessories & Tumblers',
+        price: 250.00,
+        priceNote: 'Boutique Price',
+        tag: 'Bestseller',
+        description: 'Large insulated travel tumbler with ergonomic handle, reusable straw, and signature "mood the cup" script.',
+        colors: [
+          { name: 'Black', hex: '#1F1F1F' },
+          { name: 'Light Green', hex: '#A8D5BA' },
+          { name: 'Pink', hex: '#F4C2C2' },
+          { name: 'Light Blue', hex: '#AED9E0' }
+        ],
+        sizes: ['40 oz Standard'],
+        illustrationType: 'tumbler'
+      },
+      {
+        id: 2,
+        name: 'Acid-Wash Wide-Leg Cargo Jeans',
+        category: 'Denim & Bottoms',
+        price: 550.00,
+        priceNote: 'Boutique Price',
+        tag: 'Streetwear',
+        description: 'High-waisted relaxed wide-leg denim cargo pants featuring 4 utility flap pockets and vintage acid-wash finish.',
+        colors: [
+          { name: 'Brown/Black Wash', hex: '#6B4C35' },
+          { name: 'Lime Green/Black Wash', hex: '#8A9A2B' }
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+        illustrationType: 'cargo'
+      },
+      {
+        id: 3,
+        name: 'Loewe Anagram Embroidered Denim Shorts',
+        category: 'Denim & Bottoms',
+        price: 420.00,
+        priceNote: 'Designer Inspired',
+        tag: 'Trending',
+        description: 'Classic medium-wash blue denim shorts detailed with crisp white raised Anagram embroidery on both legs.',
+        colors: [
+          { name: 'Blue Denim / White Embroidery', hex: '#3B5978' }
+        ],
+        sizes: ['S', 'M', 'L'],
+        illustrationType: 'shorts'
+      },
+      {
+        id: 4,
+        name: 'Assorted Denim & Bermuda Shorts Pack',
+        category: 'Denim & Bottoms',
+        price: 350.00,
+        priceNote: 'Per Pair',
+        tag: 'Wardrobe Staple',
+        description: 'High-rise frayed-hem denim shorts and longer Bermuda cuts in essential everyday washes.',
+        colors: [
+          { name: 'Black', hex: '#1C1C1C' },
+          { name: 'Blue', hex: '#3B6BA5' },
+          { name: 'Grey', hex: '#6E7175' },
+          { name: 'Light Blue', hex: '#89AEE0' }
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+        illustrationType: 'shorts'
+      },
+      {
+        id: 5,
+        name: '"Los Angeles 23" 4-Piece Streetwear Outfit Set',
+        category: 'Two-Piece Sets',
+        price: 890.00,
+        priceNote: 'Complete 4-Pc Bundle',
+        tag: '4-Piece Set',
+        description: 'Complete coordinated look: "Los Angeles 23" pinstripe crop tee, chain-belted cargo jeans, frayed chain denim shorts & white studded bag.',
+        colors: [
+          { name: 'Sky Blue & White Combo', hex: '#7BAFD4' }
+        ],
+        sizes: ['S', 'M', 'L'],
+        illustrationType: 'set4pc'
+      },
+      {
+        id: 6,
+        name: 'White Thong Flat Sandals with Gold Hardware',
+        category: 'Footwear',
+        price: 459.00,
+        priceNote: 'Exact Tag Price',
+        tag: '459.00',
+        description: 'Chic crisp white embossed strap thong sandals accented with a sculptural gold-tone emblem.',
+        colors: [
+          { name: 'White / Gold', hex: '#F9F8F6' }
+        ],
+        sizes: ['37', '38', '39', '40', '41'],
+        illustrationType: 'sandal_thong'
+      },
+      {
+        id: 7,
+        name: 'Black Monogram Patterned Strap Slides',
+        category: 'Footwear',
+        price: 329.00,
+        priceNote: 'Exact Tag Price',
+        tag: '329.00',
+        description: 'Sleek square-toe black flat slides featuring a woven cream & black geometric monogram strap.',
+        colors: [
+          { name: 'Black / Cream', hex: '#1A1A1A' }
+        ],
+        sizes: ['37', '38', '39', '40', '41'],
+        illustrationType: 'slide_band'
+      },
+      {
+        id: 8,
+        name: 'Beige Patterned Thong Flat Sandals',
+        category: 'Footwear',
+        price: 329.00,
+        priceNote: 'Exact Tag Price',
+        tag: '329.00',
+        description: 'Neutral cream-beige square-toe flat sandals with tonal woven monogram strap and tan sole.',
+        colors: [
+          { name: 'Beige / Tan', hex: '#DFD3C3' }
+        ],
+        sizes: ['37', '38', '39', '40', '41'],
+        illustrationType: 'slide_band'
+      },
+      {
+        id: 9,
+        name: 'White Flat Slides with Gold Buckles',
+        category: 'Footwear',
+        price: 329.00,
+        priceNote: 'Exact Tag Price',
+        tag: '329.00',
+        description: 'Minimalist ivory flat slides finished with a double-bar gold-tone centerpiece buckle.',
+        colors: [
+          { name: 'Ivory White / Gold', hex: '#F4F1EA' }
+        ],
+        sizes: ['37', '38', '39', '40', '41'],
+        illustrationType: 'slide_gold'
+      },
+      {
+        id: 10,
+        name: 'Black Monogram Platform Criss-Cross Slides',
+        category: 'Footwear',
+        price: 599.00,
+        priceNote: 'Exact Tag Price',
+        tag: '599.00',
+        description: 'Cushioned chunky platform slides wrapped in all-over black and silver monogram canvas with criss-cross straps.',
+        colors: [
+          { name: 'Black Monogram', hex: '#222222' }
+        ],
+        sizes: ['37', '38', '39', '40', '41'],
+        illustrationType: 'platform_cross'
+      },
+      {
+        id: 11,
+        name: 'White Strappy Sandals with Gold Toe Rings',
+        category: 'Footwear',
+        price: 399.00,
+        priceNote: 'Exact Tag Price',
+        tag: '399.00',
+        description: 'Modern square-toe white strappy sandals with black edge piping, ankle buckle, and polished gold toe-ring detail.',
+        colors: [
+          { name: 'White / Black Trim', hex: '#FFFFFF' }
+        ],
+        sizes: ['37', '38', '39', '40', '41'],
+        illustrationType: 'sandal_thong'
+      },
+      {
+        id: 12,
+        name: 'Black & Beige Monogram Platform Criss-Cross Slides',
+        category: 'Footwear',
+        price: 599.00,
+        priceNote: 'Exact Tag Price',
+        tag: '599.00',
+        description: 'Bold platform slides featuring wide beige woven criss-cross straps with contrasting black monogram striping.',
+        colors: [
+          { name: 'Black / Beige Strap', hex: '#E5DEC9' }
+        ],
+        sizes: ['37', '38', '39', '40', '41'],
+        illustrationType: 'platform_cross'
+      },
+      {
+        id: 13,
+        name: '"I ❤️ Irish Boys" Floral Sweatpants & Crop Top Set',
+        category: 'Two-Piece Sets',
+        price: 480.00,
+        priceNote: 'Boutique Price',
+        tag: 'M • L • XL',
+        description: 'White "I ❤️ IRISH BOYS" baby tee paired with wide-leg drawstring sweatpants adorned with white floral side prints.',
+        colors: [
+          { name: 'Magenta', hex: '#B81D6B' },
+          { name: 'Burgundy', hex: '#7A1727' },
+          { name: 'Peach', hex: '#F4A988' },
+          { name: 'Light Blue', hex: '#5499C7' },
+          { name: 'Brown', hex: '#6E5034' }
+        ],
+        sizes: ['M', 'L', 'XL'],
+        illustrationType: 'twopiece_sweat'
+      },
+      {
+        id: 14,
+        name: '"Senior Class of 2026" Custom Graduation 2-Piece Set',
+        category: 'Two-Piece Sets',
+        price: 520.00,
+        priceNote: 'Boutique Price',
+        tag: 'Class of 2026',
+        description: 'Graphic "#Nurse Life / LOVE" white crop top paired with bold "SENIOR Class Of 2026" wide-leg sweatpants.',
+        colors: [
+          { name: 'Pink', hex: '#E89EB8' },
+          { name: 'Orange', hex: '#E68A2E' },
+          { name: 'Brown', hex: '#593A2E' }
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+        illustrationType: 'twopiece_sweat'
+      },
+      {
+        id: 15,
+        name: 'Red "min min" Collared Polo & Pants 2-Piece Set',
+        category: 'Two-Piece Sets',
+        price: 540.00,
+        priceNote: 'Boutique Price',
+        tag: 'New Arrival',
+        description: 'Vibrant red knit short-sleeve collared polo with contrast trim paired with matching straight-leg drawstring pants.',
+        colors: [
+          { name: 'Vibrant Red', hex: '#D9232E' }
+        ],
+        sizes: ['S', 'M', 'L'],
+        illustrationType: 'twopiece_polo'
+      },
+      {
+        id: 16,
+        name: 'White Mesh "30" Collared Jersey & Shorts Set',
+        category: 'Two-Piece Sets',
+        price: 460.00,
+        priceNote: 'Boutique Price',
+        tag: 'Sporty Chic',
+        description: 'Breathable white athletic mesh "30" jersey crop top with emerald green collar trim and matching drawstring shorts.',
+        colors: [
+          { name: 'White / Green Trim', hex: '#1E6B4B' }
+        ],
+        sizes: ['S', 'M', 'L'],
+        illustrationType: 'twopiece_polo'
+      },
+      {
+        id: 17,
+        name: 'Resort Dress & Romper Collection',
+        category: 'Dresses',
+        price: 490.00,
+        priceNote: 'Per Style',
+        tag: 'Vacation Edit',
+        description: 'Choose from our sun-ready resort lineup: Blue/Pink Plunge Mini Dress, Yellow Strapless Cut-Out Maxi, or Red/Orange Patterned Romper.',
+        colors: [
+          { name: 'Blue/Pink Plunge Mini Dress', hex: '#5B8FB9' },
+          { name: 'Yellow Strapless Cut-Out Maxi', hex: '#E8DC58' },
+          { name: 'Red/Orange Patterned Romper', hex: '#D94E34' }
+        ],
+        sizes: ['S', 'M', 'L'],
+        illustrationType: 'dress_resort'
+      },
+      {
+        id: 18,
+        name: 'Evening & Lounge Luxe Collection',
+        category: 'Dresses',
+        price: 580.00,
+        priceNote: 'Per Style',
+        tag: '4 Styles',
+        description: 'Curated mannequin favorites: Black Sheer Embellished Maxi Dress, Brown/White Striped Polo & Leggings Set, Yellow Tank & Flare Pants Set, or Leopard Halter Jumpsuit.',
+        colors: [
+          { name: 'Black Sheer Embellished Maxi', hex: '#181818' },
+          { name: 'Brown/White Striped Set', hex: '#6E503B' },
+          { name: 'Yellow Tank & Flare Set', hex: '#F3DF6D' },
+          { name: 'Leopard Halter Jumpsuit', hex: '#8C6D46' }
+        ],
+        sizes: ['S', 'M', 'L'],
+        illustrationType: 'dress_evening'
+      },
+      {
+        id: 19,
+        name: '"DIFFERENT" Ombré Star Sweatpants & Long-Sleeve Set',
+        category: 'Two-Piece Sets',
+        price: 530.00,
+        priceNote: 'Boutique Price',
+        tag: 'Graphic Drop',
+        description: 'White "DIFFERENT" graphic long-sleeve crop top paired with two-tone ombré wide-leg sweatpants featuring star prints down the sides.',
+        colors: [
+          { name: 'Burgundy', hex: '#6E1E2A' },
+          { name: 'Black', hex: '#1E2229' },
+          { name: 'Hot Pink', hex: '#E62E8A' },
+          { name: 'Royal Blue', hex: '#1B45B8' }
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+        illustrationType: 'twopiece_sweat'
+      },
+      {
+        id: 20,
+        name: '"Dior" Classic Tee & Sweatpants 2-Piece Set',
+        category: 'Two-Piece Sets',
+        price: 495.00,
+        priceNote: 'Boutique Price',
+        tag: 'Luxe Lounge',
+        description: 'Crisp white "Dior" logo crew-neck t-shirt matched with relaxed split-hem drawstring sweatpants.',
+        colors: [
+          { name: 'Light Grey', hex: '#C8CCD1' },
+          { name: 'Dark Green', hex: '#184A32' },
+          { name: 'Black', hex: '#191919' },
+          { name: 'Bright Pink', hex: '#D9386A' }
+        ],
+        sizes: ['S', 'M', 'L', 'XL'],
+        illustrationType: 'twopiece_sweat'
+      },
+      {
+        id: 21,
+        name: 'Party & Glam Dress Collection',
+        category: 'Dresses',
+        price: 650.00,
+        priceNote: 'Per Style',
+        tag: 'Evening Glam',
+        description: 'Statement occasion pieces: Red Strapless 3D Rose Beaded Mini Dress, Striped Collared Mini Shirt Dress, or Plum Halter-Neck Dress.',
+        colors: [
+          { name: 'Red 3D Rose Beaded Mini', hex: '#D11922' },
+          { name: 'Striped Collared Shirt Dress', hex: '#5E4B45' },
+          { name: 'Plum Halter-Neck Dress', hex: '#692446' }
+        ],
+        sizes: ['S', 'M', 'L'],
+        illustrationType: 'dress_party'
+      }
+    ];
+
+    // State management
+    let activeCategory = 'All';
+    let searchQuery = '';
+    let selectedOptions = {}; // { productId: { colorIndex: 0, size: 'M' } }
+    let cart = [];
+
+    // Initialize default selections for each product
+    products.forEach(p => {
+      selectedOptions[p.id] = {
+        colorIndex: 0,
+        size: p.sizes[0]
+      };
+    });
+
+    // Custom SVG Artwork Generator based on product type & selected color
+    function getProductIllustration(product, colorHex) {
+      const isLight = ['#FFFFFF', '#F9F8F6', '#F4F1EA', '#DFD3C3', '#E5DEC9', '#C8CCD1', '#F3DF6D', '#E8DC58', '#F4C2C2', '#AED9E0', '#A8D5BA'].includes(colorHex.toUpperCase());
+      const strokeColor = isLight ? '#1A1A1A' : '#FFFFFF';
+      const secondaryFill = isLight ? '#1A1A1A' : '#FAF8F5';
+
+      switch (product.illustrationType) {
+        case 'tumbler':
+          return `
+            <svg viewBox="0 0 200 160" class="w-36 h-32 mx-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <!-- Straw -->
+              <rect x="96" y="12" width="8" height="24" rx="3" fill="#D9B99B" stroke="#1A1A1A" stroke-width="1.5"/>
+              <!-- Lid -->
+              <rect x="68" y="30" width="64" height="14" rx="6" fill="#2A2A2A"/>
+              <!-- Handle -->
+              <path d="M132 52 H148 C154 52 156 56 156 62 V96 C156 102 154 106 148 106 H130" fill="none" stroke="${colorHex}" stroke-width="9" stroke-linecap="round"/>
+              <path d="M132 52 H148 C154 52 156 56 156 62 V96 C156 102 154 106 148 106 H130" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Cup Body -->
+              <path d="M70 44 H130 L122 138 C121 143 117 146 112 146 H88 C83 146 79 143 78 138 L70 44 Z" fill="${colorHex}" stroke="#1A1A1A" stroke-width="2"/>
+              <text x="100" y="84" text-anchor="middle" fill="${strokeColor}" font-family="serif" font-style="italic" font-weight="bold" font-size="13">mood</text>
+              <text x="100" y="99" text-anchor="middle" fill="${strokeColor}" font-family="serif" font-style="italic" font-size="11">the cup</text>
+            </svg>`;
+
+        case 'cargo':
+          return `
+            <svg viewBox="0 0 200 160" class="w-36 h-32 mx-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <path d="M72 20 H128 L142 144 H112 L100 72 L88 144 H58 L72 20 Z" fill="${colorHex}" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/>
+              <!-- Waistband -->
+              <line x1="71" y1="30" x2="129" y2="30" stroke="#1A1A1A" stroke-width="1.5"/>
+              <!-- Cargo Pockets -->
+              <rect x="57" y="64" width="16" height="22" rx="3" fill="${colorHex}" stroke="#1A1A1A" stroke-width="1.8"/>
+              <rect x="127" y="64" width="16" height="22" rx="3" fill="${colorHex}" stroke="#1A1A1A" stroke-width="1.8"/>
+              <rect x="54" y="94" width="17" height="24" rx="3" fill="${colorHex}" stroke="#1A1A1A" stroke-width="1.8"/>
+              <rect x="129" y="94" width="17" height="24" rx="3" fill="${colorHex}" stroke="#1A1A1A" stroke-width="1.8"/>
+            </svg>`;
+
+        case 'shorts':
+          return `
+            <svg viewBox="0 0 200 160" class="w-36 h-32 mx-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <path d="M64 34 H136 L146 118 H106 L100 84 L94 118 H54 L64 34 Z" fill="${colorHex}" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/>
+              <line x1="63" y1="45" x2="137" y2="45" stroke="${strokeColor}" stroke-width="1.5" stroke-opacity="0.6"/>
+              <circle cx="100" cy="40" r="2.5" fill="#D4AF37"/>
+              <!-- Embroidery motif -->
+              <rect x="66" y="76" width="18" height="18" rx="4" fill="none" stroke="${strokeColor}" stroke-width="1.8" stroke-dasharray="3 2"/>
+              <rect x="116" y="76" width="18" height="18" rx="4" fill="none" stroke="${strokeColor}" stroke-width="1.8" stroke-dasharray="3 2"/>
+            </svg>`;
+
+        case 'set4pc':
+          return `
+            <svg viewBox="0 0 200 160" class="w-36 h-32 mx-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <!-- Jeans -->
+              <path d="M44 26 H84 L92 138 H72 L64 78 L56 138 H36 L44 26 Z" fill="${colorHex}" stroke="#1A1A1A" stroke-width="1.8"/>
+              <!-- Crop Tee -->
+              <path d="M104 28 L120 22 H146 L162 28 L156 48 L148 45 V68 H118 V45 L110 48 L104 28 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.8"/>
+              <text x="133" y="54" text-anchor="middle" fill="${colorHex}" font-weight="bold" font-size="14">23</text>
+              <!-- Shorts -->
+              <path d="M110 82 H156 L162 124 H137 L133 106 L129 124 H104 L110 82 Z" fill="#3B6BA5" stroke="#1A1A1A" stroke-width="1.8"/>
+              <!-- Mini Bag -->
+              <rect x="44" y="96" width="34" height="24" rx="10" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.8"/>
+            </svg>`;
+
+        case 'sandal_thong':
+        case 'slide_band':
+        case 'slide_gold':
+        case 'platform_cross':
+          return `
+            <svg viewBox="0 0 200 160" class="w-36 h-32 mx-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <!-- Sole -->
+              <rect x="64" y="20" width="32" height="116" rx="14" fill="${colorHex}" stroke="#1A1A1A" stroke-width="2" transform="rotate(-8 80 78)"/>
+              <rect x="106" y="22" width="32" height="116" rx="14" fill="${colorHex}" stroke="#1A1A1A" stroke-width="2" transform="rotate(8 122 80)"/>
+              <!-- Straps -->
+              <path d="M62 66 Q80 56 98 66" fill="none" stroke="${product.illustrationType === 'platform_cross' ? '#C86D51' : '#1A1A1A'}" stroke-width="10" stroke-linecap="round"/>
+              <path d="M104 68 Q122 58 140 68" fill="none" stroke="${product.illustrationType === 'platform_cross' ? '#C86D51' : '#1A1A1A'}" stroke-width="10" stroke-linecap="round"/>
+              <!-- Gold Accent -->
+              <circle cx="80" cy="61" r="4" fill="#D4AF37"/>
+              <circle cx="122" cy="63" r="4" fill="#D4AF37"/>
+            </svg>`;
+
+        case 'twopiece_sweat':
+        case 'twopiece_polo':
+          return `
+            <svg viewBox="0 0 200 160" class="w-36 h-32 mx-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <!-- Top -->
+              <path d="M66 24 L84 18 H116 L134 24 L128 46 L118 42 V62 H82 V42 L72 46 L66 24 Z" fill="${product.illustrationType === 'twopiece_polo' ? colorHex : '#FFFFFF'}" stroke="#1A1A1A" stroke-width="1.8"/>
+              <!-- Bottoms -->
+              <path d="M78 68 H122 L132 142 H106 L100 96 L94 142 H68 L78 68 Z" fill="${colorHex}" stroke="#1A1A1A" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- Drawstring -->
+              <path d="M97 72 V84 M103 72 V84" stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>`;
+
+        case 'dress_resort':
+        case 'dress_evening':
+        case 'dress_party':
+        default:
+          return `
+            <svg viewBox="0 0 200 160" class="w-36 h-32 mx-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <!-- Dress Silhouette -->
+              <path d="M84 24 L100 32 L116 24 L122 54 L138 140 H62 L78 54 L84 24 Z" fill="${colorHex}" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/>
+              <!-- Waist / Bust Detail -->
+              <path d="M79 54 Q100 62 121 54" fill="none" stroke="${strokeColor}" stroke-width="1.8"/>
+              <circle cx="92" cy="42" r="2" fill="#D4AF37"/>
+              <circle cx="108" cy="42" r="2" fill="#D4AF37"/>
+              <circle cx="100" cy="46" r="2" fill="#D4AF37"/>
+            </svg>`;
+      }
+    }
+
+    // Render Product Grid
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      const emptyState = document.getElementById('emptyState');
+      const countText = document.getElementById('productCountText');
+
+      const filtered = products.filter(p => {
+        const matchesCat = activeCategory === 'All' || p.category === activeCategory;
+        const q = searchQuery.toLowerCase().trim();
+        const matchesSearch = !q ||
+          p.name.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.colors.some(c => c.name.toLowerCase().includes(q));
+        return matchesCat && matchesSearch;
+      });
+
+      countText.textContent = `Showing ${filtered.length} of ${products.length} collections`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(product => {
+        const sel = selectedOptions[product.id];
+        const activeColor = product.colors[sel.colorIndex] || product.colors[0];
+
+        return `
+          <article class="bg-white rounded-3xl border border-borderWarm overflow-hidden flex flex-col card-hover group">
+            
+            <!-- Visual Preview Header -->
+            <div class="relative bg-gradient-to-b from-sand/90 to-[#F6F1EA] pt-6 pb-4 px-5 border-b border-borderWarm/70">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="px-3 py-1 rounded-full bg-white/90 border border-borderWarm text-[11px] font-bold uppercase tracking-wider text-charcoal">
+                  ${product.category}
+                </span>
+                <span class="px-3 py-1 rounded-full bg-terracotta/12 text-terracotta text-[11px] font-bold tracking-wide">
+                  ${product.tag}
+                </span>
+              </div>
+
+              <!-- Dynamic SVG Artwork -->
+              <div id="art-${product.id}" class="my-2">
+                ${getProductIllustration(product, activeColor.hex)}
+              </div>
+
+              <!-- Active Color Pill -->
+              <div class="text-center mt-1">
+                <span id="color-label-${product.id}" class="inline-block text-xs font-medium text-muted bg-white/80 px-3 py-1 rounded-full border border-borderWarm/60">
+                  Selected: <strong class="text-charcoal">${activeColor.name}</strong>
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div>
+                <div class="flex items-start justify-between gap-3">
+                  <h3 class="font-serif text-xl font-bold text-charcoal leading-snug">
+                    ${product.name}
+                  </h3>
+                </div>
+                <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+                  ${product.description}
+                </p>
+              </div>
+
+              <div class="space-y-4 pt-2 border-t border-borderWarm/60">
+                <!-- Color / Style Swatches -->
+                <div>
+                  <span class="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">
+                    ${product.colors.length > 1 ? 'Choose Color / Style:' : 'Colorway:'}
+                  </span>
+                  <div class="flex flex-wrap items-center gap-2">
+                    ${product.colors.map((c, idx) => `
+                      <button 
+                        type="button"
+                        onclick="selectColor(${product.id}, ${idx})"
+                        title="${c.name}"
+                        class="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-medium transition-all ${
+                          sel.colorIndex === idx 
+                            ? 'border-charcoal bg-charcoal text-cream shadow-xs' 
+                            : 'border-borderWarm bg-cream/60 text-charcoal hover:border-terracotta'
+                        }"
+                      >
+                        <span class="w-3.5 h-3.5 rounded-full border border-black/20 shrink-0" style="background-color: ${c.hex};"></span>
+                        <span class="truncate max-w-[130px]">${c.name}</span>
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <!-- Size Selector -->
+                <div>
+                  <span class="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">
+                    Select Size:
+                  </span>
+                  <div class="flex flex-wrap gap-1.5">
+                    ${product.sizes.map(sz => `
+                      <button 
+                        type="button"
+                        onclick="selectSize(${product.id}, '${sz}')"
+                        class="px-3 py-1 rounded-lg text-xs font-semibold border transition-all ${
+                          sel.size === sz
+                            ? 'bg-terracotta text-white border-terracotta'
+                            : 'bg-white text-charcoal border-borderWarm hover:border-charcoal'
+                        }"
+                      >
+                        ${sz}
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <!-- Price & Add to Bag -->
+                <div class="flex items-center justify-between gap-3 pt-2">
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-wider text-muted font-semibold">${product.priceNote}</span>
+                    <span class="font-serif text-2xl font-bold text-charcoal">${product.price.toFixed(2)}</span>
+                  </div>
+
+                  <button 
+                    type="button"
+                    onclick="addToCart(${product.id})"
+                    class="px-5 py-3 rounded-full bg-charcoal hover:bg-terracotta text-white text-xs sm:text-sm font-semibold tracking-wide transition-colors shadow-xs flex items-center gap-2 shrink-0"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                    </svg>
+                    <span>Add to Bag</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Select Color Swatch
+    function selectColor(productId, colorIndex) {
+      selectedOptions[productId].colorIndex = colorIndex;
+      renderProducts();
+    }
+
+    // Select Size
+    function selectSize(productId, size) {
+      selectedOptions[productId].size = size;
+      renderProducts();
+    }
+
+    // Category Filtering
+    function filterCategory(category) {
+      activeCategory = category;
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        if (btn.dataset.category === category) {
+          btn.classList.remove('bg-white', 'text-charcoal', 'border', 'border-borderWarm');
+          btn.classList.add('bg-charcoal', 'text-cream', 'shadow-sm');
+        } else {
+          btn.classList.add('bg-white', 'text-charcoal', 'border', 'border-borderWarm');
+          btn.classList.remove('bg-charcoal', 'text-cream', 'shadow-sm');
+        }
+      });
+      renderProducts();
+    }
+
+    // Search Filtering
+    function handleSearch(val) {
+      searchQuery = val;
+      const desktopInput = document.getElementById('desktopSearchInput');
+      const mobileInput = document.getElementById('mobileSearchInput');
+      if (desktopInput && desktopInput.value !== val) desktopInput.value = val;
+      if (mobileInput && mobileInput.value !== val) mobileInput.value = val;
+      renderProducts();
+    }
+
+    function toggleMobileSearch() {
+      const container = document.getElementById('mobileSearchContainer');
+      container.classList.toggle('hidden');
+      if (!container.classList.contains('hidden')) {
+        document.getElementById('mobileSearchInput').focus();
+      }
+    }
+
+    function resetFilters() {
+      activeCategory = 'All';
+      searchQuery = '';
+      document.getElementById('desktopSearchInput').value = '';
+      document.getElementById('mobileSearchInput').value = '';
+      filterCategory('All');
+    }
+
+    // Cart Operations
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      const sel = selectedOptions[productId];
+      const chosenColor = product.colors[sel.colorIndex].name;
+      const chosenColorHex = product.colors[sel.colorIndex].hex;
+      const chosenSize = sel.size;
+
+      const variantKey = `${product.id}-${chosenColor}-${chosenSize}`;
+      const existingItem = cart.find(item => item.variantKey === variantKey);
+
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({
+          variantKey,
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          color: chosenColor,
+          colorHex: chosenColorHex,
+          size: chosenSize,
+          qty: 1
+        });
+      }
+
+      updateCartUI();
+      showToast(`Added "${product.name}" to your bag`);
+    }
+
+    function updateQty(variantKey, delta) {
+      const idx = cart.findIndex(item => item.variantKey === variantKey);
+      if (idx === -1) return;
+
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) {
+        cart.splice(idx, 1);
+      }
+      updateCartUI();
+    }
+
+    function removeFromCart(variantKey) {
+      cart = cart.filter(item => item.variantKey !== variantKey);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      document.getElementById('cartBadge').textContent = totalItems;
+      document.getElementById('cartItemCountLabel').textContent = `${totalItems} ${totalItems === 1 ? 'item' : 'items'} selected`;
+      document.getElementById('cartSubtotal').textContent = subtotal.toFixed(2);
+
+      const container = document.getElementById('cartItemsContainer');
+      const footer = document.getElementById('cartFooter');
+
+      if (cart.length === 0) {
+        footer.classList.add('hidden');
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center py-12">
+            <div class="w-16 h-16 rounded-full bg-sand text-terracotta flex items-center justify-center mb-4">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-charcoal">Your bag is empty</h4>
+            <p class="text-sm text-muted max-w-xs mt-1.5">Explore our 21 curated pieces and add your favorite outfits, slides, or tumblers.</p>
+            <button onclick="closeCart()" class="mt-6 px-6 py-2.5 rounded-full bg-charcoal text-cream text-xs font-semibold uppercase tracking-wider hover:bg-terracotta transition-colors">
+              Continue Shopping
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      footer.classList.remove('hidden');
+      container.innerHTML = cart.map(item => `
+        <div class="bg-white p-4 rounded-2xl border border-borderWarm flex items-start justify-between gap-3">
+          <div class="space-y-1 flex-1">
+            <h4 class="font-serif font-bold text-base text-charcoal leading-snug">${item.name}</h4>
+            <div class="flex flex-wrap items-center gap-2 text-xs text-muted">
+              <span class="inline-flex items-center gap-1 bg-sand px-2 py-0.5 rounded-full text-charcoal font-medium">
+                <span class="w-2.5 h-2.5 rounded-full border border-black/20" style="background-color:${item.colorHex}"></span>
+                ${item.color}
+              </span>
+              <span class="bg-sand px-2 py-0.5 rounded-full text-charcoal font-medium">Size: ${item.size}</span>
+            </div>
+            <p class="text-sm font-bold text-terracotta pt-1">${(item.price * item.qty).toFixed(2)}</p>
+          </div>
+
+          <div class="flex flex-col items-end justify-between gap-3">
+            <button onclick="removeFromCart('${item.variantKey}')" class="text-xs text-muted hover:text-red-600 transition-colors" title="Remove">
+              Remove
+            </button>
+            <div class="flex items-center bg-sand rounded-full border border-borderWarm">
+              <button onclick="updateQty('${item.variantKey}', -1)" class="w-7 h-7 flex items-center justify-center text-charcoal font-bold hover:text-terracotta">−</button>
+              <span class="px-2 text-xs font-bold text-charcoal">${item.qty}</span>
+              <button onclick="updateQty('${item.variantKey}', 1)" class="w-7 h-7 flex items-center justify-center text-charcoal font-bold hover:text-terracotta">+</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Drawer Controls
+    function openCart() {
+      document.getElementById('cartOverlay').classList.remove('hidden');
+      document.getElementById('cartDrawer').classList.remove('translate-x-full');
+    }
+
+    function closeCart() {
+      document.getElementById('cartOverlay').classList.add('hidden');
+      document.getElementById('cartDrawer').classList.add('translate-x-full');
+    }
+
+    // Checkout / WhatsApp Summary
+    function buildOrderSummary() {
+      const name = document.getElementById('customerName').value.trim();
+      const location = document.getElementById('customerLocation').value.trim();
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      let lines = [
+        `✨ *NEW ORDER — BESTLADY BOUTIQUE* ✨`,
+        name ? `Customer: ${name}` : null,
+        location ? `Delivery/Notes: ${location}` : null,
+        `----------------------------------`
+      ].filter(Boolean);
+
+      cart.forEach((item, index) => {
+        lines.push(`${index + 1}. ${item.name}`);
+        lines.push(`   • Style/Color: ${item.color} | Size: ${item.size}`);
+        lines.push(`   • Qty: ${item.qty} × ${item.price.toFixed(2)} = ${(item.qty * item.price).toFixed(2)}`);
+      });
+
+      lines.push(`----------------------------------`);
+      lines.push(`*ESTIMATED TOTAL: ${subtotal.toFixed(2)}*`);
+      return lines.join('\n');
+    }
+
+    function openCheckoutModal() {
+      if (cart.length === 0) return;
+      closeCart();
+      const summary = buildOrderSummary();
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      document.getElementById('orderSummaryText').textContent = summary;
+      document.getElementById('modalTotalBadge').textContent = `Total: ${subtotal.toFixed(2)}`;
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    // Live update summary when customer types name/location
+    document.getElementById('customerName').addEventListener('input', () => {
+      document.getElementById('orderSummaryText').textContent = buildOrderSummary();
+    });
+    document.getElementById('customerLocation').addEventListener('input', () => {
+      document.getElementById('orderSummaryText').textContent = buildOrderSummary();
+    });
+
+    function sendWhatsAppOrder() {
+      const text = encodeURIComponent(buildOrderSummary());
+      window.open(`https://wa.me/?text=${text}`, '_blank');
+    }
+
+    function copyOrderSummary() {
+      const text = buildOrderSummary();
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast('Order summary copied to clipboard!');
+      } catch (err) {
+        showToast('Unable to copy automatically.');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    // Toast notification helper
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMessage').textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-3');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-3');
+      }, 2600);
+    }
+
+    // Initial Render
+    renderProducts();
+    updateCartUI();
+  </script>
 </body>
 </html>
+```
